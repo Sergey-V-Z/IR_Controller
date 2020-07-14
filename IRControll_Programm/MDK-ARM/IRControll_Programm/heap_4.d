@@ -1,0 +1,13 @@
+ircontroll_programm\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c
+ircontroll_programm\heap_4.o: D:\Radio\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+ircontroll_programm\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
+ircontroll_programm\heap_4.o: D:\Radio\Keil5\ARM\ARMCC\Bin\..\include\stddef.h
+ircontroll_programm\heap_4.o: D:\Radio\Keil5\ARM\ARMCC\Bin\..\include\stdint.h
+ircontroll_programm\heap_4.o: ../Inc/FreeRTOSConfig.h
+ircontroll_programm\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
+ircontroll_programm\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
+ircontroll_programm\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h
+ircontroll_programm\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h
+ircontroll_programm\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h
+ircontroll_programm\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/task.h
+ircontroll_programm\heap_4.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/list.h
