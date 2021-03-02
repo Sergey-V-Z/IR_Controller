@@ -28,7 +28,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "flash.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -48,7 +48,7 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+settings_t settings = {115200, 0x0E};
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -95,8 +95,15 @@ int main(void)
   MX_TIM1_Init();
   MX_TIM8_Init();
   MX_USART2_UART_Init();
+  MX_TIM6_Init();
   /* USER CODE BEGIN 2 */
-
+  Flash_ReadParams(&settings, StartSettingsAddres);
+  if((settings.BaudRate == 0) | (settings.BaudRate == 0xFFFFFFFF))
+    {
+      settings.BaudRate = 115200;
+      settings.SlaveAddress = 0x0D;
+      FLASH_WriteSettings(settings, StartSettingsAddres);
+    } 
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */
