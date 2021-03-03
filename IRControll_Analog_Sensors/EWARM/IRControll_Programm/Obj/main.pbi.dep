@@ -64,4 +64,4 @@ main.pbi: \
   D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM/../Inc\tim.h \
   D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM/../Inc\usart.h \
   D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM/../Inc\gpio.h \
-  D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM\..\librarys\flash.h
+  D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM\..\librarys\flash_user.h

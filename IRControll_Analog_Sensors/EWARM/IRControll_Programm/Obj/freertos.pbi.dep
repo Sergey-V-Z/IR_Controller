@@ -63,4 +63,7 @@ freertos.pbi: \
   D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM\..\Middlewares\modbus\include/mbport.h \
   D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM\..\Middlewares\modbus\include/mbproto.h \
   D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM\..\Middlewares\modbus\include\mbport.h \
-  D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM\..\librarys\flash.h
+  D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM\..\librarys\flash_user.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.4\arm\inc\c\stdio.h \
+  D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\Src/sensor.h \
+  D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM\..\librarys\filter_sma.h

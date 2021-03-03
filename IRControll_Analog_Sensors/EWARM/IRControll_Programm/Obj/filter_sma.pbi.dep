@@ -1,6 +1,6 @@
-flash.pbi: \
-  D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\librarys\flash.c \
-  D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\librarys/flash.h \
+filter_sma.pbi: \
+  D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\librarys\filter_sma.c \
+  D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\librarys/filter_sma.h \
   D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM/../Inc\main.h \
   D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM/../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal.h \
   D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM/../Inc\stm32f1xx_hal_conf.h \
@@ -38,23 +38,4 @@ flash.pbi: \
   D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM/../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_pwr.h \
   D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM/../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_tim.h \
   D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM/../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h \
-  D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM/../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_uart.h \
-  D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM/../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS\cmsis_os.h \
-  D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM/../Middlewares/Third_Party/FreeRTOS/Source/include\FreeRTOS.h \
-  D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM/../Inc\FreeRTOSConfig.h \
-  D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM/../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
-  D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM/../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h \
-  D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM/../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h \
-  D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM/../Middlewares/Third_Party/FreeRTOS/Source/portable/IAR/ARM_CM3\portmacro.h \
-  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.4\arm\inc\c\intrinsics.h \
-  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.4\arm\inc\c\iar_intrinsics_common.h \
-  D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM/../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
-  D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM/../Middlewares/Third_Party/FreeRTOS/Source/include\task.h \
-  D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM/../Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
-  D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM/../Middlewares/Third_Party/FreeRTOS/Source/include\timers.h \
-  D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM/../Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
-  D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM/../Middlewares/Third_Party/FreeRTOS/Source/include\queue.h \
-  D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM/../Middlewares/Third_Party/FreeRTOS/Source/include\semphr.h \
-  D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM/../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
-  D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM/../Middlewares/Third_Party/FreeRTOS/Source/include\event_groups.h \
-  D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM/../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h
+  D:\Kicads\ Schem\IR_Controller\IRControll_Analog_Sensors\EWARM/../Drivers/STM32F1xx_HAL_Driver/Inc\stm32f1xx_hal_uart.h

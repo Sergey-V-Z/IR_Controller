@@ -20,7 +20,6 @@ rule browsedata
 
 
 #Build steps
-build flash.pbi : index flash.xcl
 build mb.pbi : index mb.xcl
 build mbcrc.pbi : index mbcrc.xcl
 build mbfunccoils.pbi : index mbfunccoils.xcl
@@ -36,10 +35,13 @@ build portserial.pbi : index portserial.xcl
 build porttimer.pbi : index porttimer.xcl
 build adc.pbi : index adc.xcl
 build dma.pbi : index dma.xcl
+build filter_sma.pbi : index filter_sma.xcl
+build flash_user.pbi : index flash_user.xcl
 build freertos.pbi : index freertos.xcl
 build gpio.pbi : index gpio.xcl
 build i2c.pbi : index i2c.xcl
 build main.pbi : index main.xcl
+build sensor.pbi : index sensor.xcl
 build stm32f1xx_hal_msp.pbi : index stm32f1xx_hal_msp.xcl
 build stm32f1xx_hal_timebase_tim.pbi : index stm32f1xx_hal_timebase_tim.xcl
 build stm32f1xx_it.pbi : index stm32f1xx_it.xcl
@@ -73,14 +75,14 @@ build queue.pbi : index queue.xcl
 build stream_buffer.pbi : index stream_buffer.xcl
 build tasks.pbi : index tasks.xcl
 build timers.pbi : index timers.xcl
-build IRControll_Programm_part0.pbi : link flash.pbi mb.pbi mbcrc.pbi mbfunccoils.pbi mbfuncdiag.pbi mbfuncdisc.pbi mbfuncholding.pbi
-build IRControll_Programm_part1.pbi : link mbfuncinput.pbi mbfuncother.pbi mbrtu.pbi mbutils.pbi portevent.pbi portserial.pbi porttimer.pbi
-build IRControll_Programm_part2.pbi : link adc.pbi dma.pbi freertos.pbi gpio.pbi i2c.pbi main.pbi stm32f1xx_hal_msp.pbi
-build IRControll_Programm_part3.pbi : link stm32f1xx_hal_timebase_tim.pbi stm32f1xx_it.pbi tim.pbi usart.pbi system_stm32f1xx.pbi stm32f1xx_hal.pbi stm32f1xx_hal_adc.pbi
-build IRControll_Programm_part4.pbi : link stm32f1xx_hal_adc_ex.pbi stm32f1xx_hal_cortex.pbi stm32f1xx_hal_dma.pbi stm32f1xx_hal_exti.pbi stm32f1xx_hal_flash.pbi stm32f1xx_hal_flash_ex.pbi stm32f1xx_hal_gpio.pbi
-build IRControll_Programm_part5.pbi : link stm32f1xx_hal_gpio_ex.pbi stm32f1xx_hal_i2c.pbi stm32f1xx_hal_pwr.pbi stm32f1xx_hal_rcc.pbi stm32f1xx_hal_rcc_ex.pbi stm32f1xx_hal_tim.pbi stm32f1xx_hal_tim_ex.pbi
-build IRControll_Programm_part6.pbi : link stm32f1xx_hal_uart.pbi cmsis_os.pbi croutine.pbi event_groups.pbi heap_4.pbi list.pbi port.pbi
-build IRControll_Programm_part7.pbi : link queue.pbi stream_buffer.pbi tasks.pbi timers.pbi
+build IRControll_Programm_part0.pbi : link mb.pbi mbcrc.pbi mbfunccoils.pbi mbfuncdiag.pbi mbfuncdisc.pbi mbfuncholding.pbi mbfuncinput.pbi
+build IRControll_Programm_part1.pbi : link mbfuncother.pbi mbrtu.pbi mbutils.pbi portevent.pbi portserial.pbi porttimer.pbi adc.pbi
+build IRControll_Programm_part2.pbi : link dma.pbi filter_sma.pbi flash_user.pbi freertos.pbi gpio.pbi i2c.pbi main.pbi
+build IRControll_Programm_part3.pbi : link sensor.pbi stm32f1xx_hal_msp.pbi stm32f1xx_hal_timebase_tim.pbi stm32f1xx_it.pbi tim.pbi usart.pbi system_stm32f1xx.pbi
+build IRControll_Programm_part4.pbi : link stm32f1xx_hal.pbi stm32f1xx_hal_adc.pbi stm32f1xx_hal_adc_ex.pbi stm32f1xx_hal_cortex.pbi stm32f1xx_hal_dma.pbi stm32f1xx_hal_exti.pbi stm32f1xx_hal_flash.pbi
+build IRControll_Programm_part5.pbi : link stm32f1xx_hal_flash_ex.pbi stm32f1xx_hal_gpio.pbi stm32f1xx_hal_gpio_ex.pbi stm32f1xx_hal_i2c.pbi stm32f1xx_hal_pwr.pbi stm32f1xx_hal_rcc.pbi stm32f1xx_hal_rcc_ex.pbi
+build IRControll_Programm_part6.pbi : link stm32f1xx_hal_tim.pbi stm32f1xx_hal_tim_ex.pbi stm32f1xx_hal_uart.pbi cmsis_os.pbi croutine.pbi event_groups.pbi heap_4.pbi
+build IRControll_Programm_part7.pbi : link list.pbi port.pbi queue.pbi stream_buffer.pbi tasks.pbi timers.pbi
 build IRControll_Programm.pbd : link IRControll_Programm_part0.pbi IRControll_Programm_part1.pbi IRControll_Programm_part2.pbi IRControll_Programm_part3.pbi IRControll_Programm_part4.pbi IRControll_Programm_part5.pbi IRControll_Programm_part6.pbi IRControll_Programm_part7.pbi
 build IRControll_Programm.pbw : browsedata IRControll_Programm.pbd
 

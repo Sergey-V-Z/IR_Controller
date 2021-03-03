@@ -1,4 +1,4 @@
-#include "flash.h"
+#include "flash_user.h"
 
 
 void FLASH_WriteSettings(settings_t params, uint32_t pageAdr) {

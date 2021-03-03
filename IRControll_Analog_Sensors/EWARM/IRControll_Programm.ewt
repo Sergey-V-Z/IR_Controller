@@ -1195,12 +1195,6 @@
             </file>
         </group>
         <group>
-            <name>libs</name>
-            <file>
-                <name>$PROJ_DIR$\..\librarys\flash.c</name>
-            </file>
-        </group>
-        <group>
             <name>ModBus</name>
             <file>
                 <name>$PROJ_DIR$\..\Middlewares\modbus\mb.c</name>
@@ -1245,7 +1239,28 @@
         <group>
             <name>User</name>
             <file>
+                <name>$PROJ_DIR$\..\Src\adc.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\Src\dma.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\librarys\filter_sma.c</name>
+                <configuration>
+                    <name>IRControll_Programm</name>
+                </configuration>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\librarys\flash_user.c</name>
+                <configuration>
+                    <name>IRControll_Programm</name>
+                </configuration>
+            </file>
+            <file>
                 <name>$PROJ_DIR$\..\Src\freertos.c</name>
+                <configuration>
+                    <name>IRControll_Programm</name>
+                </configuration>
             </file>
             <file>
                 <name>$PROJ_DIR$\..\Src\gpio.c</name>
@@ -1255,6 +1270,12 @@
             </file>
             <file>
                 <name>$PROJ_DIR$\..\Src\main.c</name>
+                <configuration>
+                    <name>IRControll_Programm</name>
+                </configuration>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\Src\sensor.cpp</name>
             </file>
             <file>
                 <name>$PROJ_DIR$\..\Src\stm32f1xx_hal_msp.c</name>
@@ -1285,6 +1306,12 @@
             <name>STM32F1xx_HAL_Driver</name>
             <file>
                 <name>$PROJ_DIR$\..\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_adc.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_adc_ex.c</name>
             </file>
             <file>
                 <name>$PROJ_DIR$\..\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_cortex.c</name>

@@ -30,7 +30,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "flash.h"
+#include "flash_user.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -100,15 +100,16 @@ int main(void)
   MX_USART2_UART_Init();
   MX_TIM6_Init();
   MX_ADC1_Init();
-  MX_TIM2_Init();
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-  Flash_ReadParams(&settings, StartSettingsAddres);
+  Flash_Read(&settings, StartSettingsAddres);
   if((settings.BaudRate == 0) | (settings.BaudRate == 0xFFFFFFFF))
     {
       settings.BaudRate = 115200;
-      settings.SlaveAddress = 0x0D;
-      FLASH_WriteSettings(settings, StartSettingsAddres);
+      settings.SlaveAddress = 0x01;
+      settings.offsetMax = 0;
+      settings.offsetMin = 0;
+      Flash_Write(settings, StartSettingsAddres);
     } 
   /* USER CODE END 2 */
 

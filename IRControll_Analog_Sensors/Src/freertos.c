@@ -28,7 +28,10 @@
 /* USER CODE BEGIN Includes */     
 #include "mb.h"
 #include "mbport.h"
-#include "flash.h"
+#include "flash_user.h"
+//#include "filter_sma.h"
+#include "stdio.h"
+#include "sensor.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -50,8 +53,9 @@
 /* USER CODE BEGIN Variables */
 extern TIM_HandleTypeDef htim1;
 extern TIM_HandleTypeDef htim8;
-extern TIM_HandleTypeDef htim2;
+extern TIM_HandleTypeDef htim3;
 extern ADC_HandleTypeDef hadc1;
+
 
 extern settings_t settings;
 uint16_t sensBuff[8] = {0};
@@ -60,14 +64,17 @@ uint8_t sensState = 255; // битовое поле
 uint32_t freqSens = 72000000u/30000u; 
 uint32_t pwmSens;
 volatile uint16_t adc_buffer[1024] = {0};
-
+sensor Sensor1;
+sensor Sensor2;
+sensor Sensor3;
 /* USER CODE END Variables */
 osThreadId MainTaskHandle;
 osThreadId ModbusHandle;
+osSemaphoreId ADC_endHandle;
 
 /* Private function prototypes -----------------------------------------------*/
 /* USER CODE BEGIN FunctionPrototypes */
-
+//extern "C" 
 /* USER CODE END FunctionPrototypes */
 
 void mainTask(void const * argument);
@@ -76,7 +83,7 @@ void ModBus(void const * argument);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
 /* GetIdleTaskMemory prototype (linked to static allocation support) */
-void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize );
+extern "C"  void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize );
 
 /* USER CODE BEGIN GET_IDLE_TASK_MEMORY */
 static StaticTask_t xIdleTaskTCBBuffer;
@@ -104,6 +111,11 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN RTOS_MUTEX */
    /* add mutexes, ... */
   /* USER CODE END RTOS_MUTEX */
+
+  /* Create the semaphores(s) */
+  /* definition and creation of ADC_end */
+  osSemaphoreDef(ADC_end);
+  ADC_endHandle = osSemaphoreCreate(osSemaphore(ADC_end), 1);
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
    /* add semaphores, ... */
@@ -142,13 +154,24 @@ void MX_FREERTOS_Init(void) {
 void mainTask(void const * argument)
 {
   /* USER CODE BEGIN mainTask */
+   HAL_ADC_Start_DMA(&hadc1, (uint32_t*)&adc_buffer, 3);
+   HAL_TIM_Base_Start_IT(&htim3); 
+
    
    /* Infinite loop */
    for(;;)
    {
-      HAL_ADC_Start_DMA(&hadc1, (uint32_t*)&adc_buffer, 30);
-      HAL_TIM_Base_Start_IT(&htim2);      
-      osDelay(1);
+  
+      osSemaphoreWait(ADC_endHandle, osWaitForever);
+      Sensor1.Filter_SMA(adc_buffer[0]);
+      Sensor2.Filter_SMA(adc_buffer[1]);
+      Sensor3.Filter_SMA(adc_buffer[2]);
+      printf("CH1: %d\r\n",Sensor1.Get_Result());
+      printf("CH2: %d\r\n",Sensor2.Get_Result());
+      printf("CH3: %d\r\n",Sensor3.Get_Result());
+      
+      
+
    }
   /* USER CODE END mainTask */
 }
@@ -170,7 +193,7 @@ void ModBus(void const * argument)
    for(;;)
    {
       eMBPoll();
-      taskYIELD();
+      //taskYIELD();
    }
   /* USER CODE END ModBus */
 }
@@ -180,10 +203,9 @@ void ModBus(void const * argument)
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc){
   /* This is called after the conversion is completed */
-   if(1){
-   //обработать данные из ацп
-      // или вычтавить флаг на обработку
-   }
+
+   osSemaphoreRelease(ADC_endHandle);
+   
 }
 /*description https://www.freemodbus.org/api/group__modbus__registers.html*/
 //0x04
@@ -341,7 +363,7 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
             }
            case 0x0F: 
             {	
-               FLASH_WriteSettings(settings, StartSettingsAddres);
+               Flash_Write(settings, StartSettingsAddres);
                break;
             }
            default:

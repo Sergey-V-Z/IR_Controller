@@ -68,7 +68,8 @@ typedef struct
 {
    uint32_t BaudRate;
    uint8_t  SlaveAddress;
-   
+   uint16_t offsetMin;
+   uint16_t offsetMax;
    
 }settings_t;
 

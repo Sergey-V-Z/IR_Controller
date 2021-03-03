@@ -5,8 +5,8 @@
 
 
 void flash_write(uint32_t address,uint32_t data);
-void FLASH_WriteSettings(settings_t params, uint32_t pageAdr);
-void Flash_ReadParams(settings_t *params, uint32_t adr);
+void Flash_Write(settings_t params, uint32_t pageAdr);
+void Flash_Read(settings_t *params, uint32_t adr);
 
 
 void flash_lock(void);
