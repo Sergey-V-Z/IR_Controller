@@ -1,4 +1,5 @@
 #include "filter_sma.h"
+#include "cmsis_os.h"
 
 //******************
 // CLASS: sensor
@@ -20,9 +21,11 @@ class sensor: public filter{
    uint16_t getOffsetMax();
    bool detectPoll();
    bool getdetect();
+   void Call(uint16_t *data); // калибрует датчик, принимает указатель на переменную в которую поступаю свежие данные
    
   private:
-   uint16_t offsetMin = 0;
-   uint16_t offsetMax = 4096;
-   bool detect; // в зоне сенсора что то есть
+   uint16_t offsetMin = 0;              // зона работы датчика
+   uint16_t offsetMax = 4096;           // зона работы датчика
+   uint32_t timeCall = 3000;            // время выполнение калибровки
+   bool detect;                         // в зоне сенсора что то есть
 };

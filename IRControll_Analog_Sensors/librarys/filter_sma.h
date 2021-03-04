@@ -21,6 +21,8 @@ class filter{
   private:
    uint16_t Filter_Buffer[FILTER_SMA_ORDER] = {0,};
    uint16_t Result = 0;
+   uint16_t gorge = 0;                  // минимальное значение
+   uint16_t peak = 0;                   // пиковое значение
    
    friend class sensor;
    

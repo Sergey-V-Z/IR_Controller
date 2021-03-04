@@ -63,10 +63,12 @@ uint8_t sensState = 255; // битовое поле
 
 uint32_t freqSens = 72000000u/30000u; 
 uint32_t pwmSens;
-volatile uint16_t adc_buffer[1024] = {0};
+
+uint16_t adc_buffer[1024] = {0};
 sensor Sensor1;
 sensor Sensor2;
 sensor Sensor3;
+uint16_t call = 0;
 /* USER CODE END Variables */
 osThreadId MainTaskHandle;
 osThreadId ModbusHandle;
@@ -157,6 +159,9 @@ void mainTask(void const * argument)
    HAL_ADC_Start_DMA(&hadc1, (uint32_t*)&adc_buffer, 3);
    HAL_TIM_Base_Start_IT(&htim3); 
 
+   HAL_GPIO_WritePin(R_GPIO_Port, R_Pin, GPIO_PIN_SET);
+   HAL_GPIO_WritePin(G_GPIO_Port, G_Pin, GPIO_PIN_SET);
+   HAL_GPIO_WritePin(B_GPIO_Port, B_Pin, GPIO_PIN_SET);
    
    /* Infinite loop */
    for(;;)
@@ -167,10 +172,18 @@ void mainTask(void const * argument)
       Sensor2.Filter_SMA(adc_buffer[1]);
       Sensor3.Filter_SMA(adc_buffer[2]);
       printf("CH1: %d\r\n",Sensor1.Get_Result());
-      printf("CH2: %d\r\n",Sensor2.Get_Result());
-      printf("CH3: %d\r\n",Sensor3.Get_Result());
+      //printf("CH2: %d\r\n",Sensor2.Get_Result());
+      //printf("CH3: %d\r\n",Sensor3.Get_Result());
       
-      
+      if(call){
+         call = 0;
+         Sensor1.Call(&adc_buffer[0]);
+      }
+      if(Sensor1.detectPoll()){
+         HAL_GPIO_WritePin(R_GPIO_Port, R_Pin, GPIO_PIN_RESET);
+      }else{
+         HAL_GPIO_WritePin(R_GPIO_Port, R_Pin, GPIO_PIN_SET);
+      }
 
    }
   /* USER CODE END mainTask */

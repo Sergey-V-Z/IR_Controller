@@ -18,6 +18,9 @@ void filter :: Filter_SMA(uint16_t For_Filtered)
       Filter_Buffer[i] = Filter_Buffer[i+1];
    /* Return filtered value */
    Result = (uint16_t) Output;
+   
+   if(Result > peak){peak = Result;}
+   if(Result < gorge){gorge = Result;}
 }
 
 uint16_t filter :: Get_Result(){
