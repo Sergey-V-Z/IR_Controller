@@ -89,10 +89,10 @@ xMBPortSerialInit( UCHAR ucPORT, ULONG ulBaudRate, UCHAR ucDataBits, eMBParity e
     }
     }
     /* set serial configure */
-    if (HAL_UART_Init(serial) != HAL_OK)
-    {
-      Error_Handler();
-    }
+    //if (HAL_UART_Init(serial) != HAL_OK)
+    //{
+     // Error_Handler();
+   // }
     
     return TRUE;
 }

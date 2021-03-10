@@ -20,15 +20,15 @@
         <LeaveTargetRunning>_ 0</LeaveTargetRunning>
     </StLinkDriver>
     <DebugChecksum>
-        <Checksum>413656833</Checksum>
+        <Checksum>2378471779</Checksum>
     </DebugChecksum>
     <Exceptions>
         <StopOnUncaught>_ 0</StopOnUncaught>
         <StopOnThrow>_ 0</StopOnThrow>
     </Exceptions>
     <Disassembly>
-        <MixedMode>1</MixedMode>
         <InstrCount>0</InstrCount>
+        <MixedMode>1</MixedMode>
     </Disassembly>
     <CodeCoverage>
         <Enabled>0</Enabled>
@@ -60,6 +60,9 @@
         <regBase0>TIM8_ARR 10</regBase0>
         <regBase1>TIM1_ARR 10</regBase1>
     </Registers>
+    <struct_types>
+        <Fmt0>settings_t-BaudRate	3	0</Fmt0>
+    </struct_types>
     <Trace2>
         <Enabled>0</Enabled>
         <ShowSource>0</ShowSource>
@@ -128,13 +131,30 @@
         <ShowTiming>1</ShowTiming>
     </CallStackStripe>
     <DisassembleMode>
-        <mode>0</mode>
+        <mode>3</mode>
     </DisassembleMode>
     <Breakpoints2>
-        <Count>0</Count>
+        <Bp0>_ 1 "EMUL_CODE" "{$PROJ_DIR$\..\Src\freertos.c}.239.4" 0 0 1 "" 0 "" 0</Bp0>
+        <Count>1</Count>
     </Breakpoints2>
     <Aliases>
-        <Count>0</Count>
+        <A0>_ "D:\Kicads Schem\IR_Controller\IRControll_Analog_Sensors\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal.c" ""</A0>
+        <A1>_ "D:\Kicads Schem\IR_Controller\IRControll_Analog_Sensors\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_adc.c" ""</A1>
+        <A2>_ "D:\Kicads Schem\IR_Controller\IRControll_Analog_Sensors\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_cortex.c" ""</A2>
+        <A3>_ "D:\Kicads Schem\IR_Controller\IRControll_Analog_Sensors\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_dma.c" ""</A3>
+        <A4>_ "D:\Kicads Schem\IR_Controller\IRControll_Analog_Sensors\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_gpio.c" ""</A4>
+        <A5>_ "D:\Kicads Schem\IR_Controller\IRControll_Analog_Sensors\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_i2c.c" ""</A5>
+        <A6>_ "D:\Kicads Schem\IR_Controller\IRControll_Analog_Sensors\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc.c" ""</A6>
+        <A7>_ "D:\Kicads Schem\IR_Controller\IRControll_Analog_Sensors\Drivers\STM32F1xx_HAL_Driver\Src\stm32f1xx_hal_rcc_ex.c" ""</A7>
+        <A8>_ "D:\Kicads Schem\IR_Controller\IRControll_Analog_Sensors\Src\adc.c" ""</A8>
+        <A9>_ "D:\Kicads Schem\IR_Controller\IRControll_Analog_Sensors\Src\freertos.c" ""</A9>
+        <A10>_ "D:\Kicads Schem\IR_Controller\IRControll_Analog_Sensors\Src\i2c.c" ""</A10>
+        <A11>_ "D:\Kicads Schem\IR_Controller\IRControll_Analog_Sensors\Src\main.c" ""</A11>
+        <A12>_ "D:\Kicads Schem\IR_Controller\IRControll_Analog_Sensors\Src\stm32f1xx_hal_msp.c" ""</A12>
+        <A13>_ "D:\Kicads Schem\IR_Controller\IRControll_Analog_Sensors\Src\stm32f1xx_hal_timebase_tim.c" ""</A13>
+        <A14>_ "D:\Kicads Schem\IR_Controller\IRControll_Analog_Sensors\Src\stm32f1xx_it.c" ""</A14>
+        <A15>_ "D:\Kicads Schem\IR_Controller\IRControll_Analog_Sensors\librarys\flash_user.c" ""</A15>
+        <Count>16</Count>
         <SuppressDialog>0</SuppressDialog>
     </Aliases>
 </settings>

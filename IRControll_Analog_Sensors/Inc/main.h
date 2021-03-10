@@ -100,8 +100,6 @@ typedef struct
 #define OUT2_GPIO_Port GPIOC
 #define OUT3_Pin GPIO_PIN_8
 #define OUT3_GPIO_Port GPIOC
-#define OUT5_Pin GPIO_PIN_8
-#define OUT5_GPIO_Port GPIOA
 #define OUT6_Pin GPIO_PIN_9
 #define OUT6_GPIO_Port GPIOA
 #define OUT7_Pin GPIO_PIN_10

@@ -1,8 +1,7 @@
 #include "main.h"
 #include "cmsis_os.h"
 
-#define StartSettingsAddres 0x08007C00
-
+#define StartSettingsAddres 0x08009C00
 
 void flash_write(uint32_t address,uint32_t data);
 void Flash_Write(settings_t params, uint32_t pageAdr);

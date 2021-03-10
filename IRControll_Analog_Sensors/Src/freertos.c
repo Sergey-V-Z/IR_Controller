@@ -85,7 +85,7 @@ void ModBus(void const * argument);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
 /* GetIdleTaskMemory prototype (linked to static allocation support) */
-extern "C"  void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize );
+extern "C" void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize );
 
 /* USER CODE BEGIN GET_IDLE_TASK_MEMORY */
 static StaticTask_t xIdleTaskTCBBuffer;
@@ -184,7 +184,7 @@ void mainTask(void const * argument)
       }else{
          HAL_GPIO_WritePin(R_GPIO_Port, R_Pin, GPIO_PIN_SET);
       }
-
+      //taskYIELD();
    }
   /* USER CODE END mainTask */
 }
@@ -247,44 +247,50 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
       {	
          switch (usAddress)
          {
-           case 0: //  Stop/Start
+           case 0: 
             {	
-               *(pucRegBuffer++) = sensBuff[0];
+              uint16_t temp = Sensor1.Get_Result();
+              *(pucRegBuffer) = (temp & 0xff00)>>8;
+              *(pucRegBuffer++) = temp & 0x00ff;
+            break;
+            }
+           case 1: 
+            {	
+              uint16_t temp = Sensor2.Get_Result();
+              *(pucRegBuffer) = (temp & 0xff00)>>8;
+              *(pucRegBuffer++) = temp & 0x00ff;
                break;
             }
-           case 1: // Dir
+           case 2: 
             {	
-               *(pucRegBuffer++) = sensBuff[1];
-               break;
-            }
-           case 2: //Status start/stop
-            {	
-               *(pucRegBuffer++) = sensBuff[2];
+              uint16_t temp = Sensor3.Get_Result();
+              *(pucRegBuffer) = (temp & 0xff00)>>8;
+              *(pucRegBuffer++) = temp & 0x00ff;
                break;
             }
            case 3: //Status Dir
             {	
-               *(pucRegBuffer++) = sensBuff[3];
+               
                break;
             }
            case 4: // RPM
             {	
-               *(pucRegBuffer++) = sensBuff[4];             
+                          
                break;
             }
            case 5: // 
             {	
-               *(pucRegBuffer++) = sensBuff[5];
+               
                break;
             }
            case 6: // 
             {	
-               *(pucRegBuffer++) = sensBuff[6];
+               
                break;
             }
            case 7: // 
             {	
-               *(pucRegBuffer++) = sensBuff[7];
+               
                break;
             }
            case 8: 
@@ -304,7 +310,7 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
             }
            case 11: 
             {	
-               *(pucRegBuffer+1) = settings.BaudRate;
+               *(pucRegBuffer++) = settings.BaudRate;
                break;
             }              
            default:
@@ -371,7 +377,7 @@ eMBRegHoldingCB( UCHAR * pucRegBuffer, USHORT usAddress, USHORT usNRegs, eMBRegi
             }
            case 11: 
             {	
-               settings.SlaveAddress = *(pucRegBuffer+1);
+               settings.SlaveAddress = *(pucRegBuffer++);
                break;
             }
            case 0x0F: 

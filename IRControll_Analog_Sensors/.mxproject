@@ -38,6 +38,6 @@ SourceFiles#8=D:/Radio/Jobe/IR_Controller/IRControll_Programm/Core/Src/main.c
 SourceFolderListSize=1
 SourcePath#0=D:/Radio/Jobe/IR_Controller/IRControll_Programm/Core/Src
 SourceFiles=;gpio.c;freertos.c;i2c.c;tim.c;usart.c;stm32f1xx_it.c;stm32f1xx_hal_msp.c;stm32f1xx_hal_timebase_tim.c;main.c;adc.c;dma.c;
-HeaderPath=D:/Kicads Schem/IR_Controller/IRControll_Analog_Sensors/Inc
-SourcePath=D:/Kicads Schem/IR_Controller/IRControll_Analog_Sensors/Src
+HeaderPath=D:/Radio/Jobe/IR_Controller/IRControll_Analog_Sensors/Inc
+SourcePath=D:/Radio/Jobe/IR_Controller/IRControll_Analog_Sensors/Src
 

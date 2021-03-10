@@ -103,10 +103,10 @@ int main(void)
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
   Flash_Read(&settings, StartSettingsAddres);
-  if((settings.BaudRate == 0) | (settings.BaudRate == 0xFFFFFFFF))
+  if((settings.BaudRate == 0) | (settings.BaudRate == 0xFFFFFFFF) | (1))
     {
       settings.BaudRate = 115200;
-      settings.SlaveAddress = 0x01;
+      settings.SlaveAddress = 0x02;
       settings.offsetMax = 0;
       settings.offsetMin = 0;
       Flash_Write(settings, StartSettingsAddres);
@@ -172,6 +172,10 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
+  HAL_RCC_MCOConfig(RCC_MCO, RCC_MCO1SOURCE_PLLCLK, RCC_MCODIV_1);
+  /** Enables the Clock Security System 
+  */
+  HAL_RCC_EnableCSS();
 }
 
 /* USER CODE BEGIN 4 */
