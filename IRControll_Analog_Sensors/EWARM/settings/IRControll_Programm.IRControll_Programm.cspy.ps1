@@ -23,9 +23,9 @@
 
 if ($debugfile -eq "")
 {
-& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\common\bin\cspybat" -f "D:\Radio\Jobe\IR_Controller\IRControll_Analog_Sensors\EWARM\settings\IRControll_Programm.IRControll_Programm.general.xcl" --backend -f "D:\Radio\Jobe\IR_Controller\IRControll_Analog_Sensors\EWARM\settings\IRControll_Programm.IRControll_Programm.driver.xcl" 
+& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.4\common\bin\cspybat" -f "D:\Kicads Schem\IR_Controller\IRControll_Analog_Sensors\EWARM\settings\IRControll_Programm.IRControll_Programm.general.xcl" --backend -f "D:\Kicads Schem\IR_Controller\IRControll_Analog_Sensors\EWARM\settings\IRControll_Programm.IRControll_Programm.driver.xcl" 
 }
 else
 {
-& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.3\common\bin\cspybat" -f "D:\Radio\Jobe\IR_Controller\IRControll_Analog_Sensors\EWARM\settings\IRControll_Programm.IRControll_Programm.general.xcl" --debug_file=$debugfile --backend -f "D:\Radio\Jobe\IR_Controller\IRControll_Analog_Sensors\EWARM\settings\IRControll_Programm.IRControll_Programm.driver.xcl" 
+& "C:\Program Files (x86)\IAR Systems\Embedded Workbench 8.4\common\bin\cspybat" -f "D:\Kicads Schem\IR_Controller\IRControll_Analog_Sensors\EWARM\settings\IRControll_Programm.IRControll_Programm.general.xcl" --debug_file=$debugfile --backend -f "D:\Kicads Schem\IR_Controller\IRControll_Analog_Sensors\EWARM\settings\IRControll_Programm.IRControll_Programm.driver.xcl" 
 }

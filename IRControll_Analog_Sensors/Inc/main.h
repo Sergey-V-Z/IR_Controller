@@ -94,18 +94,6 @@ typedef struct
 #define G_GPIO_Port GPIOB
 #define R_Pin GPIO_PIN_14
 #define R_GPIO_Port GPIOB
-#define OUT1_Pin GPIO_PIN_6
-#define OUT1_GPIO_Port GPIOC
-#define OUT2_Pin GPIO_PIN_7
-#define OUT2_GPIO_Port GPIOC
-#define OUT3_Pin GPIO_PIN_8
-#define OUT3_GPIO_Port GPIOC
-#define OUT6_Pin GPIO_PIN_9
-#define OUT6_GPIO_Port GPIOA
-#define OUT7_Pin GPIO_PIN_10
-#define OUT7_GPIO_Port GPIOA
-#define OUT8_Pin GPIO_PIN_11
-#define OUT8_GPIO_Port GPIOA
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

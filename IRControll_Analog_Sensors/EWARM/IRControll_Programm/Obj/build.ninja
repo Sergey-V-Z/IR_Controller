@@ -2,9 +2,9 @@
 
 
 #Abbreviations
-cc = C$:\Program$ Files$ (x86)\IAR$ Systems\Embedded$ Workbench$ 8.3\common\bin\SourceIndexer.exe
-ll = C$:\Program$ Files$ (x86)\IAR$ Systems\Embedded$ Workbench$ 8.3\common\bin\PbdLink.exe
-bd = C$:\Program$ Files$ (x86)\IAR$ Systems\Embedded$ Workbench$ 8.3\common\bin\makeBrowseData.exe
+cc = C$:\Program$ Files$ (x86)\IAR$ Systems\Embedded$ Workbench$ 8.4\common\bin\SourceIndexer.exe
+ll = C$:\Program$ Files$ (x86)\IAR$ Systems\Embedded$ Workbench$ 8.4\common\bin\PbdLink.exe
+bd = C$:\Program$ Files$ (x86)\IAR$ Systems\Embedded$ Workbench$ 8.4\common\bin\makeBrowseData.exe
 
 
 
@@ -39,7 +39,6 @@ build filter_sma.pbi : index filter_sma.xcl
 build flash_user.pbi : index flash_user.xcl
 build freertos.pbi : index freertos.xcl
 build gpio.pbi : index gpio.xcl
-build i2c.pbi : index i2c.xcl
 build main.pbi : index main.xcl
 build sensor.pbi : index sensor.xcl
 build stm32f1xx_hal_msp.pbi : index stm32f1xx_hal_msp.xcl
@@ -58,7 +57,6 @@ build stm32f1xx_hal_flash.pbi : index stm32f1xx_hal_flash.xcl
 build stm32f1xx_hal_flash_ex.pbi : index stm32f1xx_hal_flash_ex.xcl
 build stm32f1xx_hal_gpio.pbi : index stm32f1xx_hal_gpio.xcl
 build stm32f1xx_hal_gpio_ex.pbi : index stm32f1xx_hal_gpio_ex.xcl
-build stm32f1xx_hal_i2c.pbi : index stm32f1xx_hal_i2c.xcl
 build stm32f1xx_hal_pwr.pbi : index stm32f1xx_hal_pwr.xcl
 build stm32f1xx_hal_rcc.pbi : index stm32f1xx_hal_rcc.xcl
 build stm32f1xx_hal_rcc_ex.pbi : index stm32f1xx_hal_rcc_ex.xcl
@@ -77,12 +75,12 @@ build tasks.pbi : index tasks.xcl
 build timers.pbi : index timers.xcl
 build IRControll_Programm_part0.pbi : link mb.pbi mbcrc.pbi mbfunccoils.pbi mbfuncdiag.pbi mbfuncdisc.pbi mbfuncholding.pbi mbfuncinput.pbi
 build IRControll_Programm_part1.pbi : link mbfuncother.pbi mbrtu.pbi mbutils.pbi portevent.pbi portserial.pbi porttimer.pbi adc.pbi
-build IRControll_Programm_part2.pbi : link dma.pbi filter_sma.pbi flash_user.pbi freertos.pbi gpio.pbi i2c.pbi main.pbi
-build IRControll_Programm_part3.pbi : link sensor.pbi stm32f1xx_hal_msp.pbi stm32f1xx_hal_timebase_tim.pbi stm32f1xx_it.pbi tim.pbi usart.pbi system_stm32f1xx.pbi
-build IRControll_Programm_part4.pbi : link stm32f1xx_hal.pbi stm32f1xx_hal_adc.pbi stm32f1xx_hal_adc_ex.pbi stm32f1xx_hal_cortex.pbi stm32f1xx_hal_dma.pbi stm32f1xx_hal_exti.pbi stm32f1xx_hal_flash.pbi
-build IRControll_Programm_part5.pbi : link stm32f1xx_hal_flash_ex.pbi stm32f1xx_hal_gpio.pbi stm32f1xx_hal_gpio_ex.pbi stm32f1xx_hal_i2c.pbi stm32f1xx_hal_pwr.pbi stm32f1xx_hal_rcc.pbi stm32f1xx_hal_rcc_ex.pbi
-build IRControll_Programm_part6.pbi : link stm32f1xx_hal_tim.pbi stm32f1xx_hal_tim_ex.pbi stm32f1xx_hal_uart.pbi cmsis_os.pbi croutine.pbi event_groups.pbi heap_4.pbi
-build IRControll_Programm_part7.pbi : link list.pbi port.pbi queue.pbi stream_buffer.pbi tasks.pbi timers.pbi
+build IRControll_Programm_part2.pbi : link dma.pbi filter_sma.pbi flash_user.pbi freertos.pbi gpio.pbi main.pbi sensor.pbi
+build IRControll_Programm_part3.pbi : link stm32f1xx_hal_msp.pbi stm32f1xx_hal_timebase_tim.pbi stm32f1xx_it.pbi tim.pbi usart.pbi system_stm32f1xx.pbi stm32f1xx_hal.pbi
+build IRControll_Programm_part4.pbi : link stm32f1xx_hal_adc.pbi stm32f1xx_hal_adc_ex.pbi stm32f1xx_hal_cortex.pbi stm32f1xx_hal_dma.pbi stm32f1xx_hal_exti.pbi stm32f1xx_hal_flash.pbi stm32f1xx_hal_flash_ex.pbi
+build IRControll_Programm_part5.pbi : link stm32f1xx_hal_gpio.pbi stm32f1xx_hal_gpio_ex.pbi stm32f1xx_hal_pwr.pbi stm32f1xx_hal_rcc.pbi stm32f1xx_hal_rcc_ex.pbi stm32f1xx_hal_tim.pbi stm32f1xx_hal_tim_ex.pbi
+build IRControll_Programm_part6.pbi : link stm32f1xx_hal_uart.pbi cmsis_os.pbi croutine.pbi event_groups.pbi heap_4.pbi list.pbi port.pbi
+build IRControll_Programm_part7.pbi : link queue.pbi stream_buffer.pbi tasks.pbi timers.pbi
 build IRControll_Programm.pbd : link IRControll_Programm_part0.pbi IRControll_Programm_part1.pbi IRControll_Programm_part2.pbi IRControll_Programm_part3.pbi IRControll_Programm_part4.pbi IRControll_Programm_part5.pbi IRControll_Programm_part6.pbi IRControll_Programm_part7.pbi
 build IRControll_Programm.pbw : browsedata IRControll_Programm.pbd
 
